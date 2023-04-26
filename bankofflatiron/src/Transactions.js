@@ -4,7 +4,7 @@ import './App.css'
 function Transactions() {
     const [transactions,setTransactions] = useState([]);
     useEffect(() => {
-      fetch("https://my-json-server.typicode.com/XhXai/Bank-of-Flatiron-/transactions")
+      fetch("https://name-data.onrender.com/transactions")
         .then((r) => r.json())
         .then((json) => setTransactions(json));
     }, []);

@@ -7,12 +7,12 @@ function Form() {
   const [description, setDescription] = useState('')
   const [category, setCategory] = useState('')
   const [amount, setAmount] = useState('')  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const transaction = {date, description, category, amount}
 
-
-    fetch('https://my-json-server.typicode.com/XhXai/Bank-of-Flatiron-/transactions',{
+    fetch("https://name-data.onrender.com/transactions",{
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify(transaction),
