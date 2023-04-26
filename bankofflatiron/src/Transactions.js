@@ -9,6 +9,14 @@ function Transactions() {
         .then((json) => setTransactions(json));
     }, []);
 
+    function handleDeleteClick(id) {
+        fetch(`https://transactionssite.onrender.com/transactions/${id}`, {
+          method: "DELETE",
+        })
+          .then((r) => r.json())
+          .then(() => console.log("deleted!"));
+      }
+
   return (
     <div className="App">
       <table>
@@ -19,6 +27,7 @@ function Transactions() {
           <th>Description</th>
           <th>Category</th>
           <th>Amount</th>
+          <th>DELETE TRANSACTION</th>
         </tr>
       </thead>
       <tbody>
@@ -29,6 +38,10 @@ function Transactions() {
             <td>{transaction.description}</td>
             <td>{transaction.category}</td>
             <td>{transaction.amount}</td>
+            <button className="delete-btn" onClick={() => handleDeleteClick(transaction.id)}>
+                  {" "}
+                  Delete{" "}
+                </button>
           </tr>
         ))}
       </tbody>
