@@ -12,7 +12,7 @@ function Form() {
     const transaction = {date, description, category, amount}
 
 
-    fetch('http://localhost:3000/transactions/',{
+    fetch('https://my-json-server.typicode.com/XhXai/Bank-of-Flatiron-/transactions',{
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify(transaction),
