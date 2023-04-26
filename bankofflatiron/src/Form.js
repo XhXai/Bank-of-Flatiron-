@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-
+import './App.css'
 
 function Form() {
   const [date, setDate] = useState('')
@@ -10,6 +10,8 @@ function Form() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const transaction = {date, description, category, amount}
+
+
     fetch('http://localhost:3000/transactions/',{
     method: "POST",
     headers: {"Content-Type": "application/json"},

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import './App.css'
 
 function Transactions() {
     const [transactions,setTransactions] = useState([]);
@@ -9,10 +9,6 @@ function Transactions() {
         .then((json) => setTransactions(json));
     }, []);
 
-    if (!Array.isArray(transactions)) {
-        return <div>Loading...</div>;
-      }
-      
   return (
     <div className="App">
       <table>
@@ -42,3 +38,5 @@ function Transactions() {
 }
 
 export default Transactions
+
+
